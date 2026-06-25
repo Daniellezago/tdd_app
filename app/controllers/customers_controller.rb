@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:edit, :update, :show, :destroy]
-  def index  
-    @customers = Customer.all  
+  before_action :set_customer, only: [ :edit, :update, :show, :destroy ]
+  def index
+    @customers = Customer.all
   end
 
   def new
@@ -13,8 +13,8 @@ class CustomersController < ApplicationController
 
   def update
     if @customer.update(customer_params)
-      redirect_to customer_path(@customer.id), notice: 'Cliente atualizado com sucesso!'
-    else 
+      redirect_to customer_path(@customer.id), notice: "Cliente atualizado com sucesso!"
+    else
       render :edit
     end
   end
@@ -22,7 +22,7 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     if @customer.save
-      redirect_to customers_path, notice: 'Cliente cadastrado com sucesso!'
+      redirect_to customers_path, notice: "Cliente cadastrado com sucesso!"
     else
       render :new
     end
@@ -33,16 +33,16 @@ class CustomersController < ApplicationController
 
   def destroy
     if @customer.destroy
-      redirect_to customers_path, notice: 'Cliente excluido com sucesso!'
+      redirect_to customers_path, notice: "Cliente excluido com sucesso!"
     else
       render :index
     end
   end
 
-private 
+private
 
   def set_customer
-    @customer = Customer.find(params[:id]) 
+    @customer = Customer.find(params[:id])
   end
 
   def customer_params

@@ -24,7 +24,7 @@ module TddApp
     config.load_defaults 8.0
 
     # i18n
-    config.i18n.default_locale = 'pt-BR'
+    config.i18n.default_locale = "pt-BR"
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
@@ -40,14 +40,14 @@ module TddApp
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Don't generate system test files.
-    #config.generators.system_tests = nil
-    
+    # config.generators.system_tests = nil
+
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: false,
         view_specs: false,
         helper_specs: false,
-        routing_specs: false    
+        routing_specs: false
       end
-    end
+  end
 end

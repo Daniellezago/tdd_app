@@ -49,7 +49,7 @@ group :development, :test do
   gem "selenium-webdriver"
   gem "faker"
   gem "factory_bot_rails"
-  
+
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Customers", type: :system do
-
   it "Verifica Link Cadastro de Clientes" do
     visit(root_path)
     expect(page).to have_link('Cadastro de Clientes')
@@ -21,15 +20,15 @@ RSpec.describe "Customers", type: :system do
   end
 
   it 'Cadastra um cliente válido' do
-    visit (new_customer_path) 
+    visit (new_customer_path)
     customer_name = Faker::Name.name
     customer_email = Faker::Internet.email
-    
+
     fill_in('Nome', with: customer_name)
     fill_in('Email', with: customer_email)
     fill_in('Telefone', with: Faker::PhoneNumber.phone_number)
     attach_file('Foto do Perfil', "#{Rails.root}/spec/fixtures/avatar.png")
-    choose(option: ['S', 'N'].sample)
+    choose(option: [ 'S', 'N' ].sample)
     click_on('Criar Cliente')
     expect(page).to have_content('Cliente cadastrado com sucesso!')
     expect(Customer.last.name).to eq(customer_name)
@@ -88,7 +87,7 @@ RSpec.describe "Customers", type: :system do
 
   it 'Apaga um cliente', js: true do
     customer = create(:customer)
-    
+
     visit(customers_path)
 
     accept_confirm do
