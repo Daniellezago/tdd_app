@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      customer:
+        one: Cliente
+        other: "Clientes"
+    attributes:
+      profile_member:
+        id: Código
+        name: Nome
+        email: E-mail
+        phone: Telefone
+        smoker: Fumante?
+        avatar: Foto do Perfil
+        created_at: Criado em
+        updated_at: Atualizado em
